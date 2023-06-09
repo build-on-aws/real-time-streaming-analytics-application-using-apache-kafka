@@ -1,4 +1,4 @@
-package com.amazonaws.kaja.samples.utils;
+package tutorial.buildon.aws.streaming.flink.utils;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;

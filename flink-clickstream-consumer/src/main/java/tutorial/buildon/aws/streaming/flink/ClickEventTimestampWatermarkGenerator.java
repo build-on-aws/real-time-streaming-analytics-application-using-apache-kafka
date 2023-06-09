@@ -1,8 +1,8 @@
-package com.amazonaws.kaja.samples;
+package tutorial.buildon.aws.streaming.flink;
 
 import org.apache.flink.streaming.api.functions.AssignerWithPeriodicWatermarks;
 import org.apache.flink.streaming.api.watermark.Watermark;
-import samples.clickstream.avro.ClickEvent;
+import tutorial.buildon.aws.streaming.avro.ClickEvent;
 
 import javax.annotation.Nullable;
 

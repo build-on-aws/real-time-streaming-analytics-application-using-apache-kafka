@@ -1,4 +1,4 @@
-package com.amazonaws.kaja.samples;
+package tutorial.buildon.aws.streaming.flink;
 
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.functions.windowing.ProcessWindowFunction;

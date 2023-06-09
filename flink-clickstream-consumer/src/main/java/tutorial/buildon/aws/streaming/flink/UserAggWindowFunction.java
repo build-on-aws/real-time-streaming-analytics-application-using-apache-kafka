@@ -1,4 +1,4 @@
-package com.amazonaws.kaja.samples;
+package tutorial.buildon.aws.streaming.flink;
 
 import org.apache.flink.streaming.api.functions.windowing.ProcessWindowFunction;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
