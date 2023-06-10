@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "ClickEvent",
-  "namespace": "samples.clickstream.avro",
+  "namespace": "tutorial.buildon.aws.streaming.avro",
   "fields": [
     {
       "name": "ip",

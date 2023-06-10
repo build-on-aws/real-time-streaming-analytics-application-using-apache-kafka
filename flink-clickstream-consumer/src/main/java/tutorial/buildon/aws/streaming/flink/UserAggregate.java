@@ -1,13 +1,12 @@
-package com.amazonaws.kaja.samples;
+package tutorial.buildon.aws.streaming.flink;
 
 import org.apache.flink.api.common.functions.AggregateFunction;
-import org.apache.flink.api.java.tuple.Tuple5;
-import samples.clickstream.avro.ClickEvent;
+import tutorial.buildon.aws.streaming.avro.ClickEvent;
 
 import java.util.HashSet;
 
-public class ClickstreamAggregate implements AggregateFunction<ClickEvent, ClickEventAggregate, Tuple5<Integer, Integer, Integer, HashSet<String>, Integer>> {
-     transient HashSet<String> departmentsVisited;
+public class UserAggregate implements AggregateFunction<ClickEvent, ClickEventAggregate, ClickEventAggregate> {
+    transient HashSet<String> departmentsVisited;
 
     @Override
     public ClickEventAggregate createAccumulator() {
@@ -17,7 +16,7 @@ public class ClickstreamAggregate implements AggregateFunction<ClickEvent, Click
     @Override
     public ClickEventAggregate add(ClickEvent value, ClickEventAggregate accumulator) {
 
-        if (value.getProductType().toString() != "" && !(value.getProductType().toString().equals("N/A"))) {
+        if (!(value.getProductType().toString().equals("")) && !(value.getProductType().toString().equals("N/A"))) {
             accumulator.setEventCount(accumulator.getEventCount() + 1);
             departmentsVisited = accumulator.getDepartmentsVisited();
             departmentsVisited.add(value.getProductType().toString());
@@ -33,27 +32,14 @@ public class ClickstreamAggregate implements AggregateFunction<ClickEvent, Click
             //System.out.printf("Accumulator event count: %d %n", accumulator.getEventCountWithOrderCheckout());
         }
         //System.out.printf("UsedId: %d, Accumulator event count: %d %n", accumulator.getUserId(), accumulator.getEventCount());
-        value.getEventtimestamp();
+        accumulator.setEventKey(1);
 
         return accumulator;
     }
 
     @Override
-    public Tuple5<Integer, Integer, Integer, HashSet<String>, Integer> getResult(ClickEventAggregate accumulator) {
-
-/*        return (new UserIdSessionEvent()
-                .setUserId(accumulator.getUserId())
-                .setEventCount(accumulator.getEventCount())
-                .setOrderCheckoutEventCount(accumulator.getEventCountWithOrderCheckout())
-                .setDeptList(accumulator.getDepartmentsVisited())
-                .setEventKey(1));*/
-
-        return new Tuple5<Integer, Integer, Integer, HashSet<String>, Integer>(
-                accumulator.getUserId(),
-                accumulator.getEventCount(),
-                accumulator.getEventCountWithOrderCheckout(),
-                accumulator.getDepartmentsVisited(),
-                1);
+    public ClickEventAggregate getResult(ClickEventAggregate accumulator) {
+        return accumulator;
     }
 
     @Override

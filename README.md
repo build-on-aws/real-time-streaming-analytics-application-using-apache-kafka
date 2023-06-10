@@ -40,7 +40,7 @@ cd flink-clickstream-consumer
 mvn clean package
 ```
 
-💡 A file named `target/ClickStreamProcessor-1.0-Snapshot.jar` will be created. This is your Apache Flink application.
+💡 A file named `flink-clickstream-consumer/target/ClickStreamProcessor-1.0.jar` will be created. This is your Apache Flink application.
 
 ## 🌩 Deploying into AWS
 

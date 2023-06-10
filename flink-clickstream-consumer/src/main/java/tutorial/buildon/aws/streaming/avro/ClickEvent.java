@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package samples.clickstream.avro;
+package tutorial.buildon.aws.streaming.avro;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -5896537586908312555L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ClickEvent\",\"namespace\":\"samples.clickstream.avro\",\"fields\":[{\"name\":\"ip\",\"type\":\"string\"},{\"name\":\"eventtimestamp\",\"type\":\"long\"},{\"name\":\"devicetype\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"product_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"userid\",\"type\":\"int\"},{\"name\":\"globalseq\",\"type\":\"long\"},{\"name\":\"prevglobalseq\",\"type\":\"long\",\"default\":0}]}");
+  private static final long serialVersionUID = 3337253926313068364L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ClickEvent\",\"namespace\":\"tutorial.buildon.aws.streaming.avro\",\"fields\":[{\"name\":\"ip\",\"type\":\"string\"},{\"name\":\"eventtimestamp\",\"type\":\"long\"},{\"name\":\"devicetype\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"product_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"userid\",\"type\":\"int\"},{\"name\":\"globalseq\",\"type\":\"long\"},{\"name\":\"prevglobalseq\",\"type\":\"long\",\"default\":0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -253,8 +253,8 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new ClickEvent RecordBuilder.
    * @return A new ClickEvent RecordBuilder
    */
-  public static samples.clickstream.avro.ClickEvent.Builder newBuilder() {
-    return new samples.clickstream.avro.ClickEvent.Builder();
+  public static tutorial.buildon.aws.streaming.avro.ClickEvent.Builder newBuilder() {
+    return new tutorial.buildon.aws.streaming.avro.ClickEvent.Builder();
   }
 
   /**
@@ -262,8 +262,8 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new ClickEvent RecordBuilder
    */
-  public static samples.clickstream.avro.ClickEvent.Builder newBuilder(samples.clickstream.avro.ClickEvent.Builder other) {
-    return new samples.clickstream.avro.ClickEvent.Builder(other);
+  public static tutorial.buildon.aws.streaming.avro.ClickEvent.Builder newBuilder(tutorial.buildon.aws.streaming.avro.ClickEvent.Builder other) {
+    return new tutorial.buildon.aws.streaming.avro.ClickEvent.Builder(other);
   }
 
   /**
@@ -271,8 +271,8 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new ClickEvent RecordBuilder
    */
-  public static samples.clickstream.avro.ClickEvent.Builder newBuilder(samples.clickstream.avro.ClickEvent other) {
-    return new samples.clickstream.avro.ClickEvent.Builder(other);
+  public static tutorial.buildon.aws.streaming.avro.ClickEvent.Builder newBuilder(tutorial.buildon.aws.streaming.avro.ClickEvent other) {
+    return new tutorial.buildon.aws.streaming.avro.ClickEvent.Builder(other);
   }
 
   /**
@@ -299,7 +299,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(samples.clickstream.avro.ClickEvent.Builder other) {
+    private Builder(tutorial.buildon.aws.streaming.avro.ClickEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.ip)) {
         this.ip = data().deepCopy(fields()[0].schema(), other.ip);
@@ -339,7 +339,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing ClickEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(samples.clickstream.avro.ClickEvent other) {
+    private Builder(tutorial.buildon.aws.streaming.avro.ClickEvent other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.ip)) {
         this.ip = data().deepCopy(fields()[0].schema(), other.ip);
@@ -388,7 +388,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'ip'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setIp(java.lang.CharSequence value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setIp(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.ip = value;
       fieldSetFlags()[0] = true;
@@ -408,7 +408,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'ip' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearIp() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearIp() {
       ip = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -427,7 +427,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'eventtimestamp'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setEventtimestamp(long value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setEventtimestamp(long value) {
       validate(fields()[1], value);
       this.eventtimestamp = value;
       fieldSetFlags()[1] = true;
@@ -447,7 +447,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'eventtimestamp' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearEventtimestamp() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearEventtimestamp() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -465,7 +465,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'devicetype'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setDevicetype(java.lang.CharSequence value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setDevicetype(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.devicetype = value;
       fieldSetFlags()[2] = true;
@@ -485,7 +485,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'devicetype' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearDevicetype() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearDevicetype() {
       devicetype = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -504,7 +504,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'event_type'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setEventType(java.lang.CharSequence value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setEventType(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.event_type = value;
       fieldSetFlags()[3] = true;
@@ -524,7 +524,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'event_type' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearEventType() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearEventType() {
       event_type = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -543,7 +543,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'product_type'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setProductType(java.lang.CharSequence value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setProductType(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.product_type = value;
       fieldSetFlags()[4] = true;
@@ -563,7 +563,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'product_type' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearProductType() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearProductType() {
       product_type = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -582,7 +582,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'userid'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setUserid(int value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setUserid(int value) {
       validate(fields()[5], value);
       this.userid = value;
       fieldSetFlags()[5] = true;
@@ -602,7 +602,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'userid' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearUserid() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearUserid() {
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -620,7 +620,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'globalseq'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setGlobalseq(long value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setGlobalseq(long value) {
       validate(fields()[6], value);
       this.globalseq = value;
       fieldSetFlags()[6] = true;
@@ -640,7 +640,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'globalseq' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearGlobalseq() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearGlobalseq() {
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -658,7 +658,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'prevglobalseq'.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder setPrevglobalseq(long value) {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder setPrevglobalseq(long value) {
       validate(fields()[7], value);
       this.prevglobalseq = value;
       fieldSetFlags()[7] = true;
@@ -678,7 +678,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'prevglobalseq' field.
       * @return This builder.
       */
-    public samples.clickstream.avro.ClickEvent.Builder clearPrevglobalseq() {
+    public tutorial.buildon.aws.streaming.avro.ClickEvent.Builder clearPrevglobalseq() {
       fieldSetFlags()[7] = false;
       return this;
     }

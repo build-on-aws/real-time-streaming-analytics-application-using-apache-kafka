@@ -8,9 +8,9 @@ Parameters:
     Description: Assets bucket name
     Type: String
   KdaAppKey:
-    Description: Object key for KDA Code
+    Description: Object key for Flink application file
     Type: String
-    Default: "ClickstreamProcessor-1.0-SNAPSHOT.jar"
+    Default: "ClickstreamProcessor-1.0.jar"
 
 Mappings:
   SubnetConfig:
@@ -914,10 +914,7 @@ Resources:
                 "Region": !Ref 'AWS::Region',
                 "BootstrapServers": "xxxxxxx:9098",
                 "GroupId": "flink-clickstream-processor",
-                "Topic": "clickstream",
-                "DepartmentsAgg_Topic": "Departments_Agg",
-                "clickEventsUserIdAggResult_Topic": "ClickEvents_UserId_Agg_Result",
-                "userSessionsAggregatesWithOrderCheckout_Topic": "User_Sessions_Aggregates_With_Order_Checkout"
+                "Topic": "clickstream"
               }
       ApplicationDescription: KDA Flink App to analyze Clicktream data from MSK Serverless
       ApplicationName: !Join

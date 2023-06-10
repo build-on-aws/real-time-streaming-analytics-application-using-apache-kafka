@@ -1,4 +1,4 @@
-package com.amazonaws.kaja.samples;
+package tutorial.buildon.aws.streaming.flink;
 
 public class UserIdAggEvent {
     private Integer userSessionCount;

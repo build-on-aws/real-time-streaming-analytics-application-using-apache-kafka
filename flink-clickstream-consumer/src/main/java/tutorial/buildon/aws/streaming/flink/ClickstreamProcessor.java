@@ -1,6 +1,6 @@
-package com.amazonaws.kaja.samples;
+package tutorial.buildon.aws.streaming.flink;
 
-import com.amazonaws.kaja.samples.utils.AmazonOpenSearchSink;
+import tutorial.buildon.aws.streaming.flink.utils.AmazonOpenSearchSink;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.kinesisanalytics.runtime.KinesisAnalyticsRuntime;
 import com.amazonaws.services.schemaregistry.flink.avro.GlueSchemaRegistryAvroDeserializationSchema;
@@ -10,7 +10,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.FilterFunction;
-import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.streaming.api.TimeCharacteristic;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -20,13 +19,12 @@ import org.apache.flink.streaming.api.windowing.assigners.EventTimeSessionWindow
 import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
-import org.apache.flink.streaming.connectors.kafka.partitioner.FlinkKafkaPartitioner;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.config.SaslConfigs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import samples.clickstream.avro.ClickEvent;
+import tutorial.buildon.aws.streaming.avro.ClickEvent;
 
 import java.time.Duration;
 import java.util.*;
@@ -124,9 +122,7 @@ public class ClickstreamProcessor {
         DataStream<ClickEvent> clickEvents = env.addSource(consumer
                                 .setStartFromEarliest()
                                 .assignTimestampsAndWatermarks(watermarkStrategy));
-
-
-
+        
         //Using Session windows with a gap of 1 sec since the Clickstream data generated uses a random gap
         // between 50 and 550 msecs
         //Creating User sessions and calculating the total number of events per session, no. of events before a buy
