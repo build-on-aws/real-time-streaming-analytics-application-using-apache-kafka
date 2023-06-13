@@ -11,6 +11,9 @@ Parameters:
     Description: Object key for Flink application file
     Type: String
     Default: "ClickstreamProcessor-1.0.jar"
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
 
 Mappings:
   SubnetConfig:
@@ -246,7 +249,7 @@ Resources:
           - Fn::GetAZs: { Ref: 'AWS::Region' }
       SubnetId: !Ref 'PublicSubnetOne'
       SecurityGroupIds: [ !GetAtt KafkaClientInstanceSecurityGroup.GroupId ]
-      ImageId: !FindInMap [ 'AWSRegionArch2AMI', !Ref 'AWS::Region', 'HVM64' ]
+      ImageId: !Ref LatestAmiId
       Tags:
         - Key: 'Name'
           Value: 'KafkaClientInstance'
@@ -492,7 +495,7 @@ Resources:
                   - /etc/nginx/conf.d/healthcheck.conf
     Properties:
       SubnetId: !Ref PublicSubnetOne
-      ImageId: !FindInMap [ 'AWSRegionArch2AMI', !Ref 'AWS::Region', 'HVM64' ]
+      ImageId: !Ref LatestAmiId
       InstanceType: t3.small
       SecurityGroupIds:
         - !Ref NGINXPlusInstancesSecurityGroup
