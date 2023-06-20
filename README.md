@@ -3,7 +3,7 @@
 In today’s fast-paced digital world, real-time streaming analytics has become increasingly important as companies require to understand what customers, application and products are doing right now and react promptly. For example, companies need to analyse data in real-time to continuously monitor an application to ensure high service uptime and personalize promotional offers and product recommendations to customers. 
 
 This repository contains the sample code to build a real-time streaming analytics application using Apache Kafka on AWS. It forms the basis of the following tutorial:
-* [Learn how to build a real-time streaming analytics application on Apache Kafka]()
+* [Learn how to build a real-time streaming analytics application on Apache Kafka](https://www.buildon.aws/posts/building-real-time-streaming-analytics-application-on-apache-kafka)
 
 The source code builds Apache Flink application and creates the following resources on AWS using the provided AWS CloudFormation:
 * Amazon OpenSearch Cluster
@@ -45,7 +45,7 @@ mvn clean package
 ## 🌩 Deploying into AWS
 
 Once you created built the Flink application, you can deploy the deploy the required resources on AWS to start building your real-time streaming analytics application. The required steps are detailed in the following tutorial:
-* [Learn how to build a real-time streaming analytics application on Apache Kafka]()
+* [Learn how to build a real-time streaming analytics application on Apache Kafka](https://www.buildon.aws/posts/building-real-time-streaming-analytics-application-on-apache-kafka)
 
 
 ## Security
